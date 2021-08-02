@@ -8,7 +8,7 @@
   --background-team-color: #f5f4fa;
   --background-icon-color: #f5f4fa;
   --icon-color: #afb1b8;
-  --time-function: ;
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -126,7 +126,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--time-function);
 }
 .link.current::after {
   content: "";
@@ -192,13 +192,14 @@ img {
   border-radius: 4px;
   border: none;
 }
+
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 250ms var(--cubic-bezier);
+  transition: opacity 250ms var(--time-function);
   background-color: rgba(0, 0, 0, 0.2);
 }
 .backdrop.is-hidden {
@@ -389,7 +390,7 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--time-function);
 }
 .social-list-icon {
   width: 20px;
@@ -437,8 +438,8 @@ img {
   border-radius: 4px;
   fill: var(--icon-color);
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms var(--time-function),
+    border-color 250ms var(--time-function);
 }
 
 .customers-link:hover,
@@ -491,8 +492,8 @@ button {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--time-function),
+    box-shadow 250ms var(--time-function);
 }
 
 .button-general.active {
@@ -600,7 +601,7 @@ button {
   margin-bottom: 9px;
 }
 .footer-page .link {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--time-function);
 }
 .footer-page .link:hover,
 .footer-page .link:focus {
@@ -650,5 +651,5 @@ button {
 .footer-social-list-link:focus {
   fill: var(--background-hat-color);
   background-color: var(--accent-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--time-function);
 }
